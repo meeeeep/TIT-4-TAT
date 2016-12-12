@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+
+
+//GET ROUTES
+
+/* Get to home page. */
 router.get('/', function(req, res, next) {
   res.render('index.ejs');
 });
@@ -17,8 +21,5 @@ router.get('/login', function (req,res) {
   res.render('login');
 });
 
-//Get to contact form
-router.get('/contactForm', function (req,res) {
-  res.render('contactForm');
-});
+
 module.exports = router;

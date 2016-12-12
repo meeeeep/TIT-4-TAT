@@ -1,0 +1,47 @@
+
+<!DOCTYPE html> <!--THIS IS THE NEW PAGE-->
+<html lang="en">
+<head>
+    <% include partials/head%>
+</head>
+
+<body class="container-fluid">
+
+<% include partials/nav%>
+
+<main>
+<div class="input-group">
+
+
+</div>
+
+    <form action="contactList" method="POST">
+    <div class="input-group" name="addNewContact">
+        <input type="text" class="form-control" name='first' placeholder="Contact first name" >
+        <input type="text" class="form-control" name='last'  placeholder="Contact last name" >
+        <input type="text" class="form-control" name='meeting' placeholder="Meeting place" >
+        <input type="text" class="form-control" name='phone' placeholder="Contacts phone #" >
+        <input type="text" class="form-control" name='email' placeholder="Contacts email" >
+        <input type="text" class="form-control" name='date' placeholder="Date met" >
+        <input type="text" class="form-control" name='URL' placeholder="Linkdin/person URL" >
+        <input type="text" class="form-control" name='workplace' placeholder="Contacts current/previous workplace" >
+        <input type="text" class="form-control" name='positionThere' placeholder="Contacts position there" >
+        <input type="text" class="form-control" name='interest' placeholder="Positions you are interested in at this contacts workplace:" >
+
+    </div>
+
+
+    <input class="btn btn-primary" type="submit">
+
+    </form>
+
+</main>
+
+
+<footer>
+    <% include partials/footer%>
+</footer>
+
+
+</body>
+</html>

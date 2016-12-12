@@ -8,8 +8,11 @@ var expressLayouts = require('express-ejs-layouts');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
+//Routes
 var index = require('./routes/index');
 var users = require('./routes/users');
+// var contacts = require('./routes/contacts');
+
 
 var app = express();
 mongoose.connect('mongodb://localhost/project2');
@@ -31,8 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(expressLayouts);
 app.use(methodOverride('_method'));
 
+//Routes
 app.use('/', index);
 app.use('/users', users);
+// app.use('/contacts', contacts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
