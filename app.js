@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost/project2');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('layout', 'layout');
+// app.set('layout', 'layout');
 
 
 // uncomment after placing your favicon in /public
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressLayouts);
+// app.use(expressLayouts);
 app.use(methodOverride('_method'));
 
 app.use('/', index);

@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<!DOCTYPE html> <!--This is the home page-->
+<html lang="en">
+<head>
+    <% include partials/head%>
+</head>
+
+<body class="container-fluid">
+
+<% include partials/nav%>
+
+<main>
+    <div class="jumbotron">
+        <h1>WELCOME TO TIT-4-TAT </h1>
+    </div>
+
+    <div class="questions">
+
+        <h2>Are you having a hard time keeping up with those
+        you meet at networking events like conferences and Meet-Ups? </h2>
+
+        <h2> Are you having any trouble keeping those contacts in order?</h2>
+
+        <h2> If you have answered yes to either of the questions above then consider
+        using the app TIT-4-TAT!</h2>
+
+
+    </div>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a></p>
+
+
+
+</main>
+
+
+
+<footer>
+    <% include partials/footer%>
+</footer>
+
+
+</body>
 </html>
+
+
+
+
