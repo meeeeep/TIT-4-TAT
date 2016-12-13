@@ -3,5 +3,8 @@
 <h1>CONTACT LIST GOES HERE</h1>
 
 <% contacts.forEach(function(contact) { %>
-  <p>Name: <%= contact.first + ' ' + contact.last %></p>
+  <p>Name: <%= contact.firstName + ' ' + contact.lastName %></p>
 <% }); %>
+
+
+<button><a href="/contacts/contactForm">Add Contact</a></button>

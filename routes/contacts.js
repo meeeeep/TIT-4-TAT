@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/contact');
-var contacts= require('../models/contact');
+var Contact = require('../models/contact');
 
 // var contacts = [
 //     {first: 'Stephanie', last: 'Cray' }
@@ -28,20 +28,19 @@ var contacts= require('../models/contact');
 
 
 //Get to contact form// NEW
-router.get('/contacts/contactForm', function (req,res) {
+router.get('/contactForm', function (req, res, next) {
     res.render('contacts/contactForm');
 });
 
 //Show users contact list// INDEX
-router.get('/contacts/contactList', function (req, res) {
+router.get('/contactList', function (req, res) {
 
-    contacts.find({}, function(err, allContacts){
-        if(err){
-            console.log(err);
+    Contact.find({}, function(err, allContacts){
+        if (err) {
+            return next(err);
         } else {
             res.render('contacts/contactList', {contacts: allContacts});
         }
-
     });
 
     // console.log('contacts:', contacts);
@@ -54,25 +53,25 @@ router.get('/contacts/contactList', function (req, res) {
 //POSTING ROUTES
 
 //get data from contactForm and add database/ CREATE
-router.post('/contacts/contactList', function (req, res) {
-    console.log('req:', req);
-    var first = req.body.first;
-    var last= req.body.last;
-    var met= req.body.meeting;
-    var newContact= {first : first, last: last, met: met};
-    contacts.create(newContact, function (err, newlyCreated) {
-        if(err){
-            console.log(err);
+router.post('/', function (req, res) {
+    console.log('req.body:', req.body);
+    var newContact = {
+        firstName : req.body.first,
+        lastName: req.body.last,
+        meetingPlace: req.body.meeting
+    };
+    Contact.create(newContact, function (err, savedContact) {
+        if (err){
+            return next(err);
         } else {
+            console.log('savedContact:', savedContact);
             res.redirect('contacts/contactList')
         }
-
     });
-    res.redirect('/contacts/contactList');
 });
 
 // THIS WILL SHOW THE USERS CONTACT INFO RECORDED //SHOW
-router.get('/contacts/:id', function (req, res){
+router.get('/:id', function (req, res){
     res.render('contacts/show1contact');
 });
 
