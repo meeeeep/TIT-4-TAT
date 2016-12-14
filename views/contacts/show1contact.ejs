@@ -10,8 +10,18 @@
 
 <main>
     <div class="new contact">
-        <%= contact.firstName + ' ' + contact.lastName %>
+        <p>First Name: <%= contact.firstName %></p>
+        <p>Last Name: <%= contact.lastName %></p>
+        <p>Meeting Place: <%= contact.meetingPlace %></p>
+
     </div>
+
+    <a class="btn btn-primary" href="/contacts/contactList/<%= contact._id %>/contactEdit">Edit</a>
+
+    <form action="/contacts/contactList/<%=contact._id%>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger">DELETE</button>
+    </form>
+
 
 </main>
 

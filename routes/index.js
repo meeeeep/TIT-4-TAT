@@ -20,7 +20,7 @@ router.get('/signup', function (req,res,next) {
 //POST/SIGNUP
 router.post('/signup', function(req, res, next) {
     var signUpStrategy = passport.authenticate('local-signup', {
-        successRedirect : '../contacts/contactList',
+        successRedirect : '/contacts/contactList',
         failureRedirect : '/signup',
         failureFlash : true
     });
@@ -36,7 +36,7 @@ router.get('/login', function (req,res) {
 //POST/LOGIN
 router.post('/login', function(req, res, next) {
     var loginProperty = passport.authenticate('local-login', {
-        successRedirect : '../contacts/contactList',
+        successRedirect : '/contacts/contactList',
         failureRedirect : '/login',
         failureFlash : true
     });

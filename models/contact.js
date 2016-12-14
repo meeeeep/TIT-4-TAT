@@ -5,9 +5,9 @@ var ContactSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     meetingPlace: String
-    // phoneNumber: String, required: true,
-    // email:  String, unique: true,
-    // dateMet: String,
+     //phoneNumber: String, required: true,
+    //email:  String, unique: true,
+     //dateMet: String,
     // url: String,
     // workPlace:  String,
     // positionThere: String,

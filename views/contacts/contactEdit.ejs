@@ -16,11 +16,11 @@
 
     <h1>Edit Contact</h1>
 
-    <form action="/contacts<%=contact._id%>?_method=PUT" method="POST">
+    <form action="/contacts/contactList/<%=contact._id%>?_method=PUT" method="POST">
         <div class="input-group" name="addNewContact">
-            <input type="text" class="form-control" name='first' value="<%= contact.firstName%>" placeholder="Contact first name" >
-            <input type="text" class="form-control" name='last' value="<%= contact.lastName%>" placeholder="Contact last name" >
-            <input type="text" class="form-control" name='meeting' placeholder="Meeting place" >
+            <input type="text" class="form-control" name='firstName' value="<%= contact.firstName%>" placeholder="Contact first name" >
+            <input type="text" class="form-control" name='lastName' value="<%= contact.lastName%>" placeholder="Contact last name" >
+            <input type="text" class="form-control" name='meetingPlace' value="<%= contact.meetingPlace%>" placeholder="Meeting place" >
             <input type="text" class="form-control" name='phone' placeholder="Contacts phone #" >
             <input type="text" class="form-control" name='email' placeholder="Contacts email" >
             <input type="text" class="form-control" name='date' placeholder="Date met" >

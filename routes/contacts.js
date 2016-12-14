@@ -65,13 +65,13 @@ router.post('/', function (req, res) {
             return next(err);
         } else {
             console.log('savedContact:', savedContact);
-            res.redirect('contacts/contactList')
+            res.redirect('/contacts/contactList')
         }
     });
 });
 
 // THIS WILL SHOW THE USERS CONTACT INFO RECORDED //SHOW
-router.get('/contactList:id', function (req, res, next){
+router.get('/contactList/:id', function (req, res, next){
 
     Contact.findById(req.params.id, function (err, foundContact) {
         if(err) {
@@ -84,7 +84,7 @@ router.get('/contactList:id', function (req, res, next){
 
 //EDIT ROUTE
 
-router.get('/contactList:id/contactEdit', function (req, res){
+router.get('/contactList/:id/contactEdit', function (req, res){
     Contact.findById(req.params.id, function (err, foundContact){
        if(err) {
            return next(err);
@@ -97,14 +97,30 @@ router.get('/contactList:id/contactEdit', function (req, res){
 });
 
 //UPDATE ROUTE
-router.put('/contactList:id', function (req,res){
-    Contact.findByIdAndUpdate(req.params.id, req.body.contact, function(err, updatedContact) {
+router.put('/contactList/:id', function (req,res){
+    console.log('req.body:', req.body);
+    Contact.findByIdAndUpdate(req.params.id, req.body, function(err, updatedContact) {
        if(err) {
            return next(err);
        } else {
-           res.redirect('contacts/show1contact/' + req.params.id);
+           console.log('saved updated contact:', updatedContact);
+           res.redirect('/contacts/contactList/' + req.params.id);
        }
     })
 });
+
+//DELETE ROUTE
+router.delete('/contactList/:id', function(req,res){
+    console.log('Trying to delete contact with id:', req.params.id);
+    Contact.findByIdAndRemove(req.params.id, function(err) {
+
+        if(err){
+            return next(err);
+        } else {
+            res.redirect('/contacts/contactList')
+        }
+    })
+});
+
 
 module.exports = router;
