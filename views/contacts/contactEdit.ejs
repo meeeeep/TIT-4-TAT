@@ -21,13 +21,13 @@
             <input type="text" class="form-control" name='firstName' value="<%= contact.firstName%>" placeholder="Contact first name" >
             <input type="text" class="form-control" name='lastName' value="<%= contact.lastName%>" placeholder="Contact last name" >
             <input type="text" class="form-control" name='meetingPlace' value="<%= contact.meetingPlace%>" placeholder="Meeting place" >
-            <input type="text" class="form-control" name='phone' placeholder="Contacts phone #" >
-            <input type="text" class="form-control" name='email' placeholder="Contacts email" >
-            <input type="text" class="form-control" name='date' placeholder="Date met" >
-            <input type="text" class="form-control" name='URL' placeholder="Linkdin/person URL" >
-            <input type="text" class="form-control" name='workplace' placeholder="Contacts current/previous workplace" >
-            <input type="text" class="form-control" name='positionThere' placeholder="Contacts position there" >
-            <textarea name='interest' placeholder="Positions you are interested in:"<%= contact.body%> ></textarea>
+            <input type="text" class="form-control" name='phoneNumber' value="<%=contact.phoneNumber%>" placeholder="Contacts phone #" >
+            <input type="text" class="form-control" name='email' value="<%=contact.email%>"placeholder="Contacts email" >
+            <input type="text" class="form-control" name='dateMet' value="<%=contact.dateMet%>" placeholder="Date met" >
+            <input type="text" class="form-control" name='url' value="<%=contact.url%>" placeholder="Linkdin/person URL" >
+            <input type="text" class="form-control" name='workPlace' value="<%=contact.workPlace%>"placeholder="Contacts current/previous workplace" >
+            <input type="text" class="form-control" name='positionThere' value="<%=contact.positionThere%>" placeholder="Contacts position there" >
+            <textarea name='positionsInterestedIn' placeholder="Positions you are interested in:"> <%= contact.positionsInterestedIn %> </textarea>
 
         </div>
 

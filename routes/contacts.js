@@ -56,9 +56,16 @@ router.get('/contactList', function (req, res) {
 router.post('/', function (req, res) {
     console.log('req.body:', req.body);
     var newContact = {
-        firstName : req.body.first,
-        lastName: req.body.last,
-        meetingPlace: req.body.meeting
+        firstName : req.body.firstName,
+        lastName: req.body.lastName,
+        meetingPlace: req.body.meetingPlace,
+        phoneNumber: req.body.phoneNumber,
+        email:  req.body.email,
+        dateMet:req.body.dateMet,
+        url: req.body.url,
+        workPlace:  req.body.workPlace,
+        positionThere: req.body.positionThere,
+        positionsInterestedIn: req.body.positionsInterestedIn
     };
     Contact.create(newContact, function (err, savedContact) {
         if (err){
@@ -98,7 +105,7 @@ router.get('/contactList/:id/contactEdit', function (req, res){
 
 //UPDATE ROUTE
 router.put('/contactList/:id', function (req,res){
-    console.log('req.body:', req.body);
+    console.log('req.body:', req.body);//removed .contact because trying to reach body of the form.
     Contact.findByIdAndUpdate(req.params.id, req.body, function(err, updatedContact) {
        if(err) {
            return next(err);
@@ -111,7 +118,7 @@ router.put('/contactList/:id', function (req,res){
 
 //DELETE ROUTE
 router.delete('/contactList/:id', function(req,res){
-    console.log('Trying to delete contact with id:', req.params.id);
+    console.log('Trying to delete contact with id:', req.params.id);// test to see if showing up in terminal
     Contact.findByIdAndRemove(req.params.id, function(err) {
 
         if(err){
