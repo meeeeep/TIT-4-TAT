@@ -71,8 +71,40 @@ router.post('/', function (req, res) {
 });
 
 // THIS WILL SHOW THE USERS CONTACT INFO RECORDED //SHOW
-router.get('/:id', function (req, res){
-    res.render('contacts/show1contact');
+router.get('/contactList:id', function (req, res, next){
+
+    Contact.findById(req.params.id, function (err, foundContact) {
+        if(err) {
+            return next(err);
+        } else {
+            res.render('contacts/show1contact', {contact : foundContact});
+        }
+    });
+});
+
+//EDIT ROUTE
+
+router.get('/contactList:id/contactEdit', function (req, res){
+    Contact.findById(req.params.id, function (err, foundContact){
+       if(err) {
+           return next(err);
+       } else {
+           res.render('contacts/contactEdit', {contact : foundContact});
+       }
+    });
+
+
+});
+
+//UPDATE ROUTE
+router.put('/contactList:id', function (req,res){
+    Contact.findByIdAndUpdate(req.params.id, req.body.contact, function(err, updatedContact) {
+       if(err) {
+           return next(err);
+       } else {
+           res.redirect('contacts/show1contact/' + req.params.id);
+       }
+    })
 });
 
 module.exports = router;

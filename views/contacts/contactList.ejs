@@ -14,7 +14,7 @@
 <h1>CONTACT LIST GOES HERE</h1>
 
 <% contacts.forEach(function(contact) { %>
-  <p>Name: <%= contact.firstName + ' ' + contact.lastName %></p>
+  <a href="/contacts/contactList<%= contact._id %>"><p>Name: <%= contact.firstName + ' ' + contact.lastName %></p></a>
 <% }); %>
 
 

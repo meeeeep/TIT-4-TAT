@@ -1,1 +1,24 @@
-<h1> this is the show route</h1>
+<!DOCTYPE html> <!--THIS IS THE NEW PAGE-->
+<html lang="en">
+<head>
+    <% include ../partials/head%>
+</head>
+
+<body class="container-fluid">
+
+<% include ../partials/nav%>
+
+<main>
+    <div class="new contact">
+        <%= contact.firstName + ' ' + contact.lastName %>
+    </div>
+
+</main>
+
+
+<footer>
+    <% include ../partials/footer%>
+</footer>
+
+
+</body>

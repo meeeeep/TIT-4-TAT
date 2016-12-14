@@ -1,0 +1,47 @@
+<!DOCTYPE html> <!--THIS IS THE NEW PAGE-->
+<html lang="en">
+<head>
+    <% include ../partials/head%>
+</head>
+
+<body class="container-fluid">
+
+<% include ../partials/nav%>
+
+<main>
+    <div class="input-group">
+
+
+    </div>
+
+    <h1>Edit Contact</h1>
+
+    <form action="/contacts<%=contact._id%>?_method=PUT" method="POST">
+        <div class="input-group" name="addNewContact">
+            <input type="text" class="form-control" name='first' value="<%= contact.firstName%>" placeholder="Contact first name" >
+            <input type="text" class="form-control" name='last' value="<%= contact.lastName%>" placeholder="Contact last name" >
+            <input type="text" class="form-control" name='meeting' placeholder="Meeting place" >
+            <input type="text" class="form-control" name='phone' placeholder="Contacts phone #" >
+            <input type="text" class="form-control" name='email' placeholder="Contacts email" >
+            <input type="text" class="form-control" name='date' placeholder="Date met" >
+            <input type="text" class="form-control" name='URL' placeholder="Linkdin/person URL" >
+            <input type="text" class="form-control" name='workplace' placeholder="Contacts current/previous workplace" >
+            <input type="text" class="form-control" name='positionThere' placeholder="Contacts position there" >
+            <textarea name='interest' placeholder="Positions you are interested in:"<%= contact.body%> ></textarea>
+
+        </div>
+
+
+        <input class="btn btn-primary" type="submit">
+
+    </form>
+
+</main>
+
+
+<footer>
+    <% include ../partials/footer%>
+</footer>
+
+
+</body>
