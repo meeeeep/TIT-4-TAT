@@ -19,6 +19,8 @@ ADDITIONAL FEATURES AND WORK I WOULD NEED TO DO IN THE FUTURE:
 
 •	I would also like to work on styling.
 
+•	I would like to add a Learn More page.
+
 •	I would also like to edit spelling errors on the page.
 
 •	I would like to additionally add a way for users to be able to connect to LinkedIn and add contacts that way as well.
