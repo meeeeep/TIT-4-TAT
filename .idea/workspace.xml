@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13ec7e7b-34c1-453d-aca1-22c6bad73c2b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/partials/header.ejs" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacts/contactEdit.ejs" afterPath="$PROJECT_DIR$/views/contacts/contactEdit.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacts/contactForm.ejs" afterPath="$PROJECT_DIR$/views/contacts/contactForm.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacts/contactList.ejs" afterPath="$PROJECT_DIR$/views/contacts/contactList.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacts/show1contact.ejs" afterPath="$PROJECT_DIR$/views/contacts/show1contact.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/head.ejs" afterPath="$PROJECT_DIR$/views/partials/head.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/nav.ejs" afterPath="$PROJECT_DIR$/views/partials/nav.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.ejs" afterPath="$PROJECT_DIR$/views/signup.ejs" />
-    </list>
+    <list default="true" id="13ec7e7b-34c1-453d-aca1-22c6bad73c2b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -440,12 +427,12 @@
       <workItem from="1481238931720" duration="2637000" />
       <workItem from="1481295669764" duration="886000" />
       <workItem from="1481415918446" duration="3907000" />
-      <workItem from="1481479104546" duration="108930000" />
+      <workItem from="1481479104546" duration="108974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116360000" />
+    <option name="totallyTimeSpent" value="116404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
