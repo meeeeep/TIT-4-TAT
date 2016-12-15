@@ -8,6 +8,7 @@ USER STORIES- https://trello.com/b/CP1ycfmk/job-network-app
 
 DEPLOYED APP- https://fathomless-meadow-21011.herokuapp.com/
 
+WIREFRAME- LOCATED IN TIT-FOR-TAT PDF FILE
 
 ADDITIONAL FEATURES AND WORK I WOULD NEED TO DO IN THE FUTURE:
 
