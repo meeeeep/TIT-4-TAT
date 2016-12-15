@@ -4,7 +4,7 @@ CREATED TO HELP PEOPLE KEEP TRACK OF THEIR CONTACTS THEY MEET AT NETWORKING EVEN
 
 LINKS
 
-USER STORIES- https://trello.com/b/CP1ycfmk/job-network-app
+USER STORIES- https://trello.com/b/CP1ycfmk/stephanies-job-network-app
 
 DEPLOYED APP- https://fathomless-meadow-21011.herokuapp.com/
 
