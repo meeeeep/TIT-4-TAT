@@ -38,15 +38,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(expressLayouts);
 app.use(methodOverride('_method'));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
 app.use(require('express-session')({
     secret: 'I love cats too',
     resave: true,
     saveUninitialized: true
 
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 require('./config/passport')(passport);
 
