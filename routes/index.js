@@ -1,54 +1,58 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-
-
+var User= require('../models/user');
 
 //GET ROUTES
 
-/* Get to home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+/* GET TO HOME PAGE */
+router.get('/', function(req, res) {
+    res.render('index');
 });
 
-// Get to signup page
-router.get('/signup', function (req,res,next) {
-  res.render('signup');
+// GET TO SIGNUP PAGE
+router.get('/signup', function (req,res) {
+    res.render('signup');
 
 });
 
-//POST/SIGNUP
-router.post('/signup', function(req, res, next) {
-    var signUpStrategy = passport.authenticate('local-signup', {
-        successRedirect : '/contacts/contactList',
-        failureRedirect : '/signup',
-        failureFlash : true
+//POST FOR SIGNUP
+router.post('/signup', function (req,res) {
+    var newUser = new User({ username: req.body.username });
+    User.register(newUser, req.body.password, function (err, user) {
+        if(err){
+            console.log(err);
+            return res.render('signup');
+        }
+        passport.authenticate('local')(req,res, function () {
+            res.redirect('/contacts/contactList');
+
+        });
+
     });
 
-    return signUpStrategy(req, res, next);
 });
 
-//Get to login page
+//GET LOGIN PAGE
+
 router.get('/login', function (req,res) {
-  res.render('login');
+    res.render('login');
 });
 
-//POST/LOGIN
-router.post('/login', function(req, res, next) {
-    var loginProperty = passport.authenticate('local-login', {
-        successRedirect : '/contacts/contactList',
-        failureRedirect : '/login',
-        failureFlash : true
+//POST LOGIN
+router.post('/login', passport.authenticate('local', {
+        successRedirect: '/contacts/contactList',
+        failureRedirect: '/signup'
+
+    }),
+    function(req,res){
+
     });
-
-    return loginProperty(req, res, next);
-});
 
 // GET /logout
-router.get('/logout', function(req, res, next) {
+router.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
 });
-
 
 module.exports = router;

@@ -22,30 +22,29 @@
 
 
     </div>
-<main>
-    <p> All we need from you in order to signup is a valid email address and a password of your choice.</p>
-    <div>
-        <h2>Signup</h2>
+    <main>
+        <p> All we need from you in order to signup is a valid email address or user name and a password of your choice.</p>
+        <div>
+            <h2>Signup</h2>
+            <form method="POST" action="/signup" class="signup">
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input class="form-control" type="text" name="username" id="email">
+                </div>
 
-        <form method="post" action="/signup">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="text" name="email" id="email">
-            </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password">  <!--HIDES THE PASSWORD-->
+                </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input class="form-control" type="password" name="password" id="password">  <!--HIDES THE PASSWORD-->
-            </div>
+                <input class="ui orange button" type="submit">
+            </form>
+        </div>
+    </main>
 
-            <input class="ui orange button" type="submit">
-        </form>
-    </div>
-</main>
-
-<footer>
-    <% include partials/footer%>
-</footer>
+    <footer>
+        <% include partials/footer%>
+    </footer>
 
 
 </body>

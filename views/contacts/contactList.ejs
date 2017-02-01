@@ -5,6 +5,7 @@
     <% include ../partials/head%>
 </head>
 
+
 <body class="container-fluid">
 
 <div class="top"></div>
@@ -13,14 +14,12 @@
 
 <main>
 
-<h1>MY LIST OF CONTACTS</h1>
+  <h1>MY LIST OF CONTACTS</h1>
 
-<% contacts.forEach(function(contact) { %>
+    <% contacts.forEach(function(contact) { %>
   <a href="/contacts/contactList/<%= contact._id %>"><br><p class="contact">Name: <%= contact.firstName + ' ' + contact.lastName %></p></a>
-<% }); %>
-<br>
-
-<!--<button><a href="/contacts/contactForm">Add Contact</a></button>-->
+    <% }); %>
+  <br>
 
   <a class= "ui orange button" type="submit" href= "/contacts/contactForm" > ADD CONTACT </a>
 

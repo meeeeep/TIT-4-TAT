@@ -1,32 +1,13 @@
-var  mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
-// var contact =  require('/models/contact');
+var mongoose = require('mongoose');
+var passportLocalMongoose = require('passport-local-mongoose');
 
 var UserSchema = new mongoose.Schema({
-    local : {
-        emaiL:     String,
-        password:  String
-    },
-
+    username: String,
+    password: String
 });
 
 
 
 
-UserSchema.methods.encrypt = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
-};
-
-UserSchema.methods.isValidPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
-};
-
-//bcrypt stuff
-
-
-
-
+UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('User', UserSchema);
-
-
-// var user = require('./user');
